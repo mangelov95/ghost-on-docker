@@ -1,5 +1,10 @@
 # ghost-on-docker
 
+Changelog:
+
+* Changed Node.JS image used to resin/raspberry-pi-alpine-node:onbuild
+* Updated Ghost version to be 0.11.9
+
 ![Ghost](https://raw.githubusercontent.com/alexellis/ghost-on-docker/master/static/ghost_small.png)
 
 Pair Docker and Ghost for the perfect platform to run your blog!
@@ -31,7 +36,7 @@ These are all based upon Node 4.x, pick the architecture for your computer/serve
   $ docker run --name blog -d -p 80:2368 alexellis2/ghost-on-docker:latest
   ```
   Or use the recently added [Docker Compose file](https://github.com/alexellis/ghost-on-docker/blob/master/x86_64/docker-compose.yml) for even less fuss:
-  
+
   ```
   $ docker-compose up -d
   ```

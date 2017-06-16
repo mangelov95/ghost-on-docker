@@ -1,10 +1,12 @@
-FROM alexellis2/nodejs-armhf:6.9.2
+FROM resin/raspberry-pi-alpine-node:onbuild
+
+ENV INITSYSTEM on
 
 USER root
 WORKDIR /var/www/
 RUN mkdir -p ghost
 RUN apt-get update && apt-get -qy install wget unzip && \
-    wget https://github.com/TryGhost/Ghost/releases/download/0.11.8/Ghost-0.11.8.zip && \
+    wget https://github.com/TryGhost/Ghost/releases/download/0.11.9/Ghost-0.11.9.zip && \
     unzip Ghost-*.zip -d ghost && \
     apt-get -y remove wget unzip && \
     rm -rf /var/lib/apt/lists/*
@@ -28,4 +30,3 @@ ENV NODE_ENV production
 
 RUN sed -e s/127.0.0.1/0.0.0.0/g ./config.example.js > ./config.js
 CMD ["pm2", "start", "index.js", "--name", "blog", "--no-daemon"]
-
