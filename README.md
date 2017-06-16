@@ -1,5 +1,8 @@
 # ghost-on-docker
 
+
+** NOT WORKING AT THE MOMENT **
+
 Changelog:
 
 * Changed Node.JS image used to resin/raspberry-pi-alpine-node:onbuild
